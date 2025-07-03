@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DTS - About Us</title>
+    <title>DTS - AI Innovation</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; margin: 0; padding: 0; min-height: 100vh; overflow: hidden; }
-        .nav-fixed { position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(15, 26, 42, 0.95); }
-        .main-content { padding-top: 80px; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
-        .fade-in { animation: fadeIn 1.5s ease-out; }
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #0f1a2a, #1a2f4a); color: #ffffff; overflow-x: hidden; }
+        .fade-in { animation: fadeIn 1.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .highlight { color: #ff00ff; text-shadow: 0 0 15px #ff00ff, 0 0 30px #cc00cc; }
-        .scroll-panel { height: 80vh; width: 90%; max-width: 1200px; padding: 25px; background: rgba(10, 20, 35, 0.9); border: 3px solid #ff00ff; border-radius: 12px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #ff00ff #0f1a2a; box-shadow: 0 0 20px rgba(255, 0, 255, 0.35); }
-        .scroll-panel::-webkit-scrollbar { width: 12px; }
-        .scroll-panel::-webkit-scrollbar-track { background: #0f1a2a; }
-        .scroll-panel::-webkit-scrollbar-thumb { background-color: #ff00ff; border-radius: 6px; }
-        .geo-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(255, 0, 255, 0.1) 10px, rgba(255, 0, 255, 0.1) 20px), repeating-linear-gradient(135deg, transparent 0, transparent 10px, rgba(255, 0, 255, 0.1) 10px, rgba(255, 0, 255, 0.1) 20px); animation: geoShift 8s infinite; }
-        @keyframes geoShift { 0% { background-position: 0 0; } 50% { background-position: 20px 20px; } 100% { background-position: 0 0; } }
-        .pro-border { border: 3px solid #ff00ff; box-shadow: 0 0 15px #ff00ff, 0 0 25px #cc00cc; }
+        .hover-shine { position: relative; overflow: hidden; }
+        .hover-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.3), transparent); transform: rotate(30deg); animation: shine 3s infinite; }
+        @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .particle { position: absolute; background: rgba(0, 255, 255, 0.5); border-radius: 50%; animation: float 15s infinite; }
+        @keyframes float { 0% { transform: translateY(0) scale(0.5); opacity: 0.5; } 50% { transform: translateY(-50vh) scale(1.5); opacity: 1; } 100% { transform: translateY(-100vh) scale(0.5); opacity: 0; } }
+        @media (max-width: 640px) {
+            nav { padding: 1rem; }
+            nav ul { flex-direction: column; space-x-0 space-y-2; }
+            h1 { font-size: 2rem; }
+            p { font-size: 1.2rem; }
+            a { padding: 0.75rem 1.5rem; font-size: 1rem; }
+            .particle { display: none; }
+        }
     </style>
 </head>
 <body>
-    <nav class="nav-fixed p-4 flex justify-between items-center shadow-md">
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
         <div class="text-white text-3xl font-bold">DTS</div>
         <ul class="flex space-x-8">
             <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
@@ -33,39 +36,17 @@
         </ul>
     </nav>
 
-    <div class="main-content relative">
-        <div class="fade-in max-w-3xl p-6 pro-border">
-            <h1 class="text-5xl font-bold text-white mb-6">About Us</h1>
-            <div class="scroll-panel">
-                <p class="text-xl text-gray-200 mb-4">Established in 2025, Decentralized Technology Services (DTS) is dedicated to supporting small businesses against a challenging technological environment. With an 80% failure rate within five years driven by inefficiencies, obsolete systems, and data breaches, DTS provides critical AI integration to ensure survival and growth, achieving <span class="highlight">20% efficiency gains</span> with top-tier privacy measures.</p>
-
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">The Essential Role of AI in Small Business Viability</h2>
-                <p class="text-xl text-gray-200 mb-4">Small businesses contribute 44% to U.S. economic activity and employ 61.7 million people as of 2025, yet only 30% utilize AI, exposing them to competitive threats. AI is essential for automating routine tasks, delivering real-time data for decisions, and securing data against breaches costing $200,000 on average. Without AI, losses from inefficiencies reach $50,000 annually. DTS delivers solutions that reduce downtime by 40% and increase revenue by 15% within a year, securing a competitive edge.</p>
-                <p class="text-xl text-gray-200 mb-4">In today’s climate of rising costs and labor shortages, AI adoption is a strategic necessity. DTS’s tools ensure operational resilience and adaptability to rapid technological changes.</p>
-
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">How DTS Drives Business Success</h2>
-                <p class="text-xl text-gray-200 mb-4">DTS offers more than technology—it provides a framework for sustained success. Our team of 15 professionals, including AI and cybersecurity experts, develops customized solutions for businesses with 1-100 employees. We automate key processes—payroll, customer support, supply chains—saving up to $75,000 per year. Using AES-256 encryption, we protect against 99.9% of cyber threats, a critical safeguard given the $200,000 average breach cost.</p>
-                <p class="text-xl text-gray-200 mb-4">With 24/7 support and 48-hour onboarding, we ensure rapid integration. Our 2025 pilot with 50 clients achieved a 25% profit increase, proving our value. DTS is your reliable partner for long-term viability.</p>
-
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Our API Ecosystem</h2>
-                <h3 class="text-2xl font-semibold text-gray-200 mt-4">Grok 3 by xAI</h3>
-                <p class="text-lg text-gray-300 mb-4">Grok 3, released by xAI in 2025, offers 95% accuracy in natural language tasks with 200ms latency. It processes 500 requests per minute, supporting chatbots and forecasting. DTS leverages it to cut response times by 50%, enhancing operational efficiency.</p>
-                <h3 class="text-2xl font-semibold text-gray-200 mt-4">OpenAI o3</h3>
-                <p class="text-lg text-gray-300 mb-4">OpenAI o3, launched in 2025, provides 98% precision across text, images, and data, handling 1,000 requests per second across 150+ languages. DTS uses it to increase sales conversions by 20%, maintaining market relevance.</p>
-                <h3 class="text-2xl font-semibold text-gray-200 mt-4">Anthropic Claude 4</h3>
-                <p class="text-lg text-gray-300 mb-4">Claude 4, Anthropic’s 2025 innovation, ensures 99% ethical compliance with a 150ms response time, managing 500 tasks for a 30% workflow improvement. DTS applies it for compliance, reducing regulatory risks costing $100,000.</p>
-
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">The Need for DTS in 2025</h2>
-                <p class="text-xl text-gray-200 mb-4">The pandemic led to 20% permanent closures in 2020-2021, with costs and cyber threats escalating in 2025. DTS provides a 40% cost reduction and 60% faster market response. Our 35% client retention rate demonstrates our impact on sustainability.</p>
-                <p class="text-xl text-gray-200 mb-4">Aiming for 2,000 businesses by 2028 with a $10M revenue target, DTS offers $5,000 setup savings and scalable plans for $50K-$5M revenues. Your business thrives with us.</p>
-
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Achieving Wealth with DTS</h2>
-                <p class="text-xl text-gray-200 mb-4">DTS drives wealth through 30-day training, boosting productivity by 25%. Our hourly-updated dashboard increases profit margins by 15%, supported by 98% client satisfaction. Planned AI forecasting by 2026 and blockchain by 2029 ensure future dominance.</p>
-                <p class="text-xl text-gray-200 mb-4">Partner with DTS—survival now, prosperity later.</p>
-            </div>
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20 relative overflow-hidden">
+        <div class="text-center fade-in">
+            <h1 class="text-6xl font-bold text-white mb-6">Decentralized Technology Services</h1>
+            <p class="text-2xl text-gray-200 mb-8">Empowering Businesses with AI and Privacy</p>
+            <a href="about.html" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 hover-shine">About Us</a>
         </div>
-        <!-- Cyber-Grid Effect -->
-        <div class="cyber-grid"></div>
+        <div class="particle" style="left: 10%; top: 20%; width: 10px; height: 10px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 40%; width: 15px; height: 15px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 50%; top: 60%; width: 12px; height: 12px; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; width: 8px; height: 8px; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 90%; top: 70%; width: 10px; height: 10px; animation-delay: 8s;"></div>
     </div>
 
     <script>
