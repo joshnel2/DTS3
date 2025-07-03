@@ -13,8 +13,11 @@
         .input-glow:focus { box-shadow: 0 0 15px #00ccff; transition: box-shadow 0.3s; }
         .form-card { background: rgba(15, 26, 42, 0.9); border: 1px solid #00ccff; }
         @media (max-width: 640px) {
-            nav { padding: 1rem; }
-            nav ul { flex-direction: column; space-x-0 space-y-2; }
+            .nav-fixed { padding: 1rem; }
+            .nav-fixed .menu { display: none; }
+            .nav-fixed .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
+            .nav-fixed .menu.active { display: flex; flex-direction: column; position: absolute; top: 60px; right: 1rem; background: rgba(15, 26, 42, 0.95); padding: 1rem; border-radius: 5px; }
+            .nav-fixed ul { flex-direction: row; }
             .max-w-md { max-width: 100%; width: 95%; }
             h1 { font-size: 2rem; }
             p { font-size: 1.2rem; }
@@ -23,9 +26,10 @@
     </style>
 </head>
 <body>
-    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+    <nav class="nav-fixed p-4 flex justify-between items-center shadow-md bg-gray-900">
         <div class="text-white text-3xl font-bold">DTS</div>
-        <ul class="flex space-x-8">
+        <div class="menu-toggle text-white md:hidden">☰</div>
+        <ul class="flex space-x-8 menu">
             <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
             <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
             <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
@@ -52,6 +56,11 @@
     <script>
         window.addEventListener('load', () => {
             document.querySelectorAll('.bounce-in').forEach(el => el.classList.add('bounce-in'));
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
         });
     </script>
 </body>
