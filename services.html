@@ -14,10 +14,10 @@
         .card-hover:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
         .highlight { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc; }
         @media (max-width: 640px) {
-            .nav-fixed { padding: 1rem; }
+            .nav-fixed { padding: 0.5rem; }
             .nav-fixed .menu { display: none; }
-            .nav-fixed .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
-            .nav-fixed .menu.active { display: flex; flex-direction: column; position: absolute; top: 60px; right: 1rem; background: rgba(15, 26, 42, 0.95); padding: 1rem; border-radius: 5px; }
+            .nav-fixed .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+            .nav-fixed .menu.active { display: flex; flex-direction: column; position: absolute; top: 50px; right: 0.5rem; background: rgba(15, 26, 42, 0.95); padding: 1rem; border-radius: 5px; }
             .nav-fixed ul { flex-direction: row; }
             .grid { grid-template-columns: 1fr; }
             h2 { font-size: 1.5rem; }
@@ -27,10 +27,10 @@
     </style>
 </head>
 <body>
-    <nav class="nav-fixed p-4 flex justify-between items-center shadow-md bg-gray-900">
-        <div class="text-white text-3xl font-bold">DTS</div>
-        <div class="menu-toggle text-white md:hidden">☰</div>
-        <ul class="flex space-x-8 menu">
+    <nav class="nav-fixed bg-gray-900 flex justify-between items-center shadow-md">
+        <div class="text-white text-2xl font-bold pl-2">DTS</div>
+        <div class="menu-toggle text-white md:hidden pr-2">☰</div>
+        <ul class="flex space-x-4 menu">
             <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
             <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
             <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
@@ -38,26 +38,26 @@
         </ul>
     </nav>
 
-    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Pattern')] bg-cover bg-center pt-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl p-6">
-            <div class="zoom-in bg-gray-800 p-6 rounded-lg shadow-lg card-hover" style="animation-delay: 0s;">
-                <h2 class="text-3xl font-bold text-white mb-4">AI Integration Excellence</h2>
-                <p class="text-gray-200 mb-2">Unlock the power of <span class="highlight">Grok 3</span>, <span class="highlight">OpenAI o3</span>, and <span class="highlight">Claude 4</span> with our no-code platform. Experience seamless connectivity with 95%+ accuracy, 1,000 requests per second, and real-time adaptability. Join 500+ businesses already thriving with our solutions.</p>
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Pattern')] bg-cover bg-center pt-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl p-4">
+            <div class="zoom-in bg-gray-800 p-4 rounded-lg shadow-lg card-hover" style="animation-delay: 0s;">
+                <h2 class="text-3xl font-bold text-white mb-3">AI Integration Excellence</h2>
+                <p class="text-gray-200 mb-1">Unlock the power of <span class="highlight">Grok 3</span>, <span class="highlight">OpenAI o3</span>, and <span class="highlight">Claude 4</span> with our no-code platform. Experience seamless connectivity with 95%+ accuracy, 1,000 requests per second, and real-time adaptability. Join 500+ businesses already thriving with our solutions.</p>
                 <p class="text-gray-200">Why choose us? Save 15 hours weekly on manual tasks and boost ROI by 25% with our expert setup—start today!</p>
             </div>
-            <div class="zoom-in bg-gray-800 p-6 rounded-lg shadow-lg card-hover" style="animation-delay: 0.2s;">
-                <h2 class="text-3xl font-bold text-white mb-4">Privacy Shield Security</h2>
-                <p class="text-gray-200 mb-2">Protect your data with AES-256 encryption and zero-knowledge architecture. Our privacy shield meets GDPR and CCPA standards, ensuring 100% compliance. With a track record of zero breaches, trust us to safeguard your sensitive information.</p>
+            <div class="zoom-in bg-gray-800 p-4 rounded-lg shadow-lg card-hover" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-white mb-3">Privacy Shield Security</h2>
+                <p class="text-gray-200 mb-1">Protect your data with AES-256 encryption and zero-knowledge architecture. Our privacy shield meets GDPR and CCPA standards, ensuring 100% compliance. With a track record of zero breaches, trust us to safeguard your sensitive information.</p>
                 <p class="text-gray-200">Clients report a 30% increase in customer trust—secure your edge with DTS now!</p>
             </div>
-            <div class="zoom-in bg-gray-800 p-6 rounded-lg shadow-lg card-hover" style="animation-delay: 0.4s;">
-                <h2 class="text-3xl font-bold text-white mb-4">Automation Suite Power</h2>
-                <p class="text-gray-200 mb-2">Automate emails, scheduling, and inventory with a 20% efficiency gain. Our suite handles 10,000+ transactions monthly, reducing costs by $10K annually for the average client. Real-time analytics provide actionable insights daily.</p>
+            <div class="zoom-in bg-gray-800 p-4 rounded-lg shadow-lg card-hover" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold text-white mb-3">Automation Suite Power</h2>
+                <p class="text-gray-200 mb-1">Automate emails, scheduling, and inventory with a 20% efficiency gain. Our suite handles 10,000+ transactions monthly, reducing costs by $10K annually for the average client. Real-time analytics provide actionable insights daily.</p>
                 <p class="text-gray-200">Transform your operations—sign up to cut overhead and dominate your market!</p>
             </div>
-            <div class="zoom-in bg-gray-800 p-6 rounded-lg shadow-lg card-hover" style="animation-delay: 0.6s;">
-                <h2 class="text-3xl font-bold text-white mb-4">Future-Ready AI Agent</h2>
-                <p class="text-gray-200 mb-2">Coming in 2027, our AI agent optimizes workflows with predictive modeling, reducing downtime by 40%. It learns your business patterns, offering personalized upgrades and a projected $20K savings per year.</p>
+            <div class="zoom-in bg-gray-800 p-4 rounded-lg shadow-lg card-hover" style="animation-delay: 0.6s;">
+                <h2 class="text-3xl font-bold text-white mb-3">Future-Ready AI Agent</h2>
+                <p class="text-gray-200 mb-1">Coming in 2027, our AI agent optimizes workflows with predictive modeling, reducing downtime by 40%. It learns your business patterns, offering personalized upgrades and a projected $20K savings per year.</p>
                 <p class="text-gray-200">Be among the first to experience this game-changer—join DTS and lead the future!</p>
             </div>
         </div>
