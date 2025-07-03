@@ -13,6 +13,8 @@
         .hover-shine { position: relative; overflow: hidden; }
         .hover-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.3), transparent); transform: rotate(30deg); animation: shine 3s infinite; }
         @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .particle { position: absolute; background: rgba(0, 255, 255, 0.5); border-radius: 50%; animation: float 15s infinite; }
+        @keyframes float { 0% { transform: translateY(0) scale(0.5); opacity: 0.5; } 50% { transform: translateY(-50vh) scale(1.5); opacity: 1; } 100% { transform: translateY(-100vh) scale(0.5); opacity: 0; } }
     </style>
 </head>
 <body>
@@ -23,16 +25,21 @@
             <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
             <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
             <li><a href="get-started.html" class="text-white hover:text-blue-300 transition duration-300">Get Started</a></li>
-            <li><a href="contact.html" class="text-white hover:text-blue-300 transition duration-300">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20">
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20 relative overflow-hidden">
         <div class="text-center fade-in">
             <h1 class="text-6xl font-bold text-white mb-6">Decentralized Technology Services</h1>
             <p class="text-2xl text-gray-200 mb-8">Empowering Businesses with AI and Privacy</p>
             <a href="get-started.html" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 hover-shine">Start Your Journey</a>
         </div>
+        <!-- Cool Particle Animation -->
+        <div class="particle" style="left: 10%; top: 20%; width: 10px; height: 10px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 40%; width: 15px; height: 15px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 50%; top: 60%; width: 12px; height: 12px; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; width: 8px; height: 8px; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 90%; top: 70%; width: 10px; height: 10px; animation-delay: 8s;"></div>
     </div>
 
     <script>
