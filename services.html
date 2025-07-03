@@ -12,7 +12,15 @@
         @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
         .card-hover:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
-        .highlight { color: #00ccff; text-shadow: 0 0 10px #00ccff; }
+        .highlight { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00cc; }
+        @media (max-width: 640px) {
+            nav { padding: 1rem; }
+            nav ul { flex-direction: column; space-x-0 space-y-2; }
+            .grid { grid-template-columns: 1fr; }
+            h2 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+            .card-hover { margin-bottom: 1rem; }
+        }
     </style>
 </head>
 <body>
