@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTS - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #0f1a2a, #1a2f4a); color: #ffffff; }
+        .fade-in-down { animation: fadeInDown 1.5s ease-out; }
+        @keyframes fadeInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .text-glow { animation: textGlow 2s infinite; }
+        @keyframes textGlow { 0% { text-shadow: 0 0 5px #00ccff; } 50% { text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff; } 100% { text-shadow: 0 0 5px #00ccff; } }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+        <div class="text-white text-3xl font-bold">DTS</div>
+        <ul class="flex space-x-8">
+            <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
+            <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
+            <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
+            <li><a href="get-started.html" class="text-white hover:text-blue-300 transition duration-300">Get Started</a></li>
+            <li><a href="contact.html" class="text-white hover:text-blue-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
 
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Pattern')] bg-cover bg-center pt-20">
+        <div class="text-center fade-in-down max-w-md p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl">
+            <h1 class="text-4xl font-bold text-white mb-6 text-glow">Contact Us</h1>
+            <p class="text-lg text-gray-200 mb-4">Reach out to revolutionize your business.</p>
+            <p class="text-lg text-gray-200">Email: <a href="mailto:info@dts.ai" class="text-blue-300 hover:underline">info@dts.ai</a> | Phone: <a href="tel:+15551234567" class="text-blue-300 hover:underline">(555) 123-4567</a></p>
+            <p class="text-lg text-gray-200 mt-4">We’ll respond within 24 hours.</p>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in-down').forEach(el => el.classList.add('fade-in-down'));
+        });
+    </script>
+</body>
+</html>
