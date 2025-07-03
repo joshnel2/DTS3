@@ -12,6 +12,14 @@
         @keyframes bounceIn { 0% { transform: scale(0.9); opacity: 0; } 50% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
         .input-glow:focus { box-shadow: 0 0 15px #00ccff; transition: box-shadow 0.3s; }
         .form-card { background: rgba(15, 26, 42, 0.9); border: 1px solid #00ccff; }
+        @media (max-width: 640px) {
+            nav { padding: 1rem; }
+            nav ul { flex-direction: column; space-x-0 space-y-2; }
+            .max-w-md { max-width: 100%; width: 95%; }
+            h1 { font-size: 2rem; }
+            p { font-size: 1.2rem; }
+            input, button { font-size: 1rem; padding: 0.75rem; }
+        }
     </style>
 </head>
 <body>
