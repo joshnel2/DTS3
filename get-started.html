@@ -10,7 +10,8 @@
         body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; }
         .bounce-in { animation: bounceIn 1.5s ease-out; }
         @keyframes bounceIn { 0% { transform: scale(0.9); opacity: 0; } 50% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
-        .input-glow:focus { box-shadow: 0 0 10px #00ccff; transition: box-shadow 0.3s; }
+        .input-glow:focus { box-shadow: 0 0 15px #00ccff; transition: box-shadow 0.3s; }
+        .form-card { background: rgba(15, 26, 42, 0.9); border: 1px solid #00ccff; }
     </style>
 </head>
 <body>
@@ -26,13 +27,16 @@
     </nav>
 
     <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20">
-        <div class="text-center bounce-in max-w-md p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl">
+        <div class="text-center bounce-in max-w-md p-6 form-card rounded-lg shadow-xl">
             <h1 class="text-4xl font-bold text-white mb-6">Get Started</h1>
-            <p class="text-lg text-gray-200 mb-6">Elevate your business—complete the form below.</p>
+            <p class="text-lg text-gray-200 mb-6">Unlock your business potential—fill out the form.</p>
             <form class="space-y-4">
                 <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
                 <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
                 <input type="text" placeholder="Business Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Annual Revenue (e.g., $100K)" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Industry (e.g., Retail, Tech)" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="number" placeholder="Number of Employees" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
                 <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Submit Now</button>
             </form>
         </div>
