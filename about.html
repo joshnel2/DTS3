@@ -7,11 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; }
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; overflow-x: hidden; }
         .slide-up { animation: slideUp 1.5s ease-out; }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .bg-pulse { animation: bgPulse 4s infinite; }
         @keyframes bgPulse { 0% { background-color: #1a2f4a; } 50% { background-color: #0f1a2a; } 100% { background-color: #1a2f4a; } }
+        .highlight { color: #00ccff; text-shadow: 0 0 10px #00ccff; }
+        .scroll-section { height: 100vh; padding: 20px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #00ccff #0f1a2a; }
+        .scroll-section::-webkit-scrollbar { width: 8px; }
+        .scroll-section::-webkit-scrollbar-track { background: #0f1a2a; }
+        .scroll-section::-webkit-scrollbar-thumb { background-color: #00ccff; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -27,10 +32,19 @@
     </nav>
 
     <div class="min-h-screen flex items-center justify-center bg-pulse pt-20">
-        <div class="text-center slide-up max-w-2xl p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg">
-            <h1 class="text-5xl font-bold text-white mb-6">About Us</h1>
-            <p class="text-xl text-gray-200 mb-4">DTS leads the charge in AI innovation, integrating top-tier APIs—Grok 3, OpenAI o3, Claude 4—with robust privacy through advanced encryption, boosting efficiency by 20% for small businesses.</p>
-            <p class="text-xl text-gray-200">Founded by forward-thinkers to empower your growth.</p>
+        <div class="slide-up max-w-3xl p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl">
+            <h1 class="text-5xl font-bold text-white mb-6">About Us: Pioneers of the AI Revolution</h1>
+            <div class="scroll-section h-[70vh]">
+                <p class="text-xl text-gray-200 mb-4">At DTS, we’re not just participants in the tech evolution—we’re its architects. Born in 2025 from a bold vision to liberate small businesses from outdated systems, we harness the most advanced AI APIs to deliver <span class="highlight">20% efficiency gains</span> with unbreakable privacy. Our mission? To transform data into your competitive edge, powering growth with cutting-edge innovation.</p>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Our API Powerhouse</h2>
+                <h3 class="text-2xl font-semibold text-gray-200 mt-4">Grok 3 by xAI</h3>
+                <p class="text-lg text-gray-300 mb-4">Grok 3, the latest from xAI, offers unparalleled natural language processing and real-time decision-making. With a focus on ethical AI, it integrates seamlessly for tasks like customer support automation, boasting a 95% accuracy rate in complex queries as of July 2025. DTS leverages its API to deliver responsive, secure solutions.</p>
+                <h3 class="text-2xl font-semibold text-gray-200 mt-4">OpenAI o3</h3>
+                <p class="text-lg text-gray-300 mb-4">OpenAI’s o3 pushes boundaries with advanced reasoning and multimodal capabilities, handling text, images, and data synthesis. Released in 2025, it supports 150+ languages and achieves 98% precision in predictive analytics. DTS uses o3 to optimize inventory and marketing, encrypted end-to-end.</p>
+                <h3 class="text-2xl font-semibold text-gray-200 mt-4">Anthropic Claude 4</h3>
+                <p class="text-lg text-gray-300 mb-4">Claude 4, Anthropic’s 2025 flagship, excels in interpretability and safety, with a 99% compliance rate for ethical guidelines. Its API powers DTS’s workflow automation, offering real-time adjustments and a 25% speed increase over predecessors, all wrapped in our privacy shield.</p>
+                <p class="text-xl text-gray-200 mt-4">Together, these APIs form the backbone of DTS, driving a future where technology empowers without compromise. Join us to redefine what’s possible.</p>
+            </div>
         </div>
     </div>
 
