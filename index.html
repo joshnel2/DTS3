@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTS - AI Innovation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #0f1a2a, #1a2f4a); color: #ffffff; overflow-x: hidden; }
+        .fade-in { animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .hover-shine { position: relative; overflow: hidden; }
+        .hover-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(120deg, transparent, rgba(0, 255, 255, 0.3), transparent); transform: rotate(30deg); animation: shine 3s infinite; }
+        @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+        <div class="text-white text-3xl font-bold">DTS</div>
+        <ul class="flex space-x-8">
+            <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
+            <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
+            <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
+            <li><a href="get-started.html" class="text-white hover:text-blue-300 transition duration-300">Get Started</a></li>
+            <li><a href="contact.html" class="text-white hover:text-blue-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20">
+        <div class="text-center fade-in">
+            <h1 class="text-6xl font-bold text-white mb-6">Decentralized Technology Services</h1>
+            <p class="text-2xl text-gray-200 mb-8">Empowering Businesses with AI and Privacy</p>
+            <a href="get-started.html" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 hover-shine">Start Your Journey</a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('fade-in'));
+        });
+    </script>
+</body>
+</html>
