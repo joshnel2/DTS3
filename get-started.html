@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTS - Get Started</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; }
+        .bounce-in { animation: bounceIn 1.5s ease-out; }
+        @keyframes bounceIn { 0% { transform: scale(0.9); opacity: 0; } 50% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
+        .input-glow:focus { box-shadow: 0 0 10px #00ccff; transition: box-shadow 0.3s; }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+        <div class="text-white text-3xl font-bold">DTS</div>
+        <ul class="flex space-x-8">
+            <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
+            <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
+            <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
+            <li><a href="get-started.html" class="text-white hover:text-blue-300 transition duration-300">Get Started</a></li>
+            <li><a href="contact.html" class="text-white hover:text-blue-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20">
+        <div class="text-center bounce-in max-w-md p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl">
+            <h1 class="text-4xl font-bold text-white mb-6">Get Started</h1>
+            <p class="text-lg text-gray-200 mb-6">Elevate your business—complete the form below.</p>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Business Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Submit Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.bounce-in').forEach(el => el.classList.add('bounce-in'));
+        });
+    </script>
+</body>
+</html>
