@@ -7,20 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; overflow-x: hidden; }
-        .slide-up { animation: slideUp 1.5s ease-out; }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .bg-pulse { animation: bgPulse 4s infinite; }
-        @keyframes bgPulse { 0% { background-color: #1a2f4a; } 50% { background-color: #0f1a2a; } 100% { background-color: #1a2f4a; } }
-        .highlight { color: #00ccff; text-shadow: 0 0 10px #00ccff; }
-        .scroll-section { height: 85vh; padding: 20px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #00ccff #0f1a2a; }
-        .scroll-section::-webkit-scrollbar { width: 8px; }
-        .scroll-section::-webkit-scrollbar-track { background: #0f1a2a; }
-        .scroll-section::-webkit-scrollbar-thumb { background-color: #00ccff; border-radius: 4px; }
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; margin: 0; padding: 0; min-height: 100vh; position: relative; overflow: hidden; }
+        .nav-fixed { position: fixed; top: 0; width: 100%; z-index: 50; }
+        .content-wrapper { padding-top: 80px; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; position: relative; }
+        .slide-in { animation: slideIn 1.5s ease-out; }
+        @keyframes slideIn { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .highlight { color: #ff00ff; text-shadow: 0 0 20px #ff00ff, 0 0 40px #cc00cc; }
+        .scroll-box { height: 80vh; width: 90%; max-width: 1200px; padding: 20px; background: rgba(15, 26, 42, 0.85); border: 2px solid #ff00ff; border-radius: 15px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #ff00ff #0f1a2a; box-shadow: 0 0 25px rgba(255, 0, 255, 0.4); }
+        .scroll-box::-webkit-scrollbar { width: 10px; }
+        .scroll-box::-webkit-scrollbar-track { background: #0f1a2a; }
+        .scroll-box::-webkit-scrollbar-thumb { background-color: #ff00ff; border-radius: 5px; }
+        .wireframe { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/wireframe.png') repeat; opacity: 0.15; animation: wirePulse 4s infinite; }
+        @keyframes wirePulse { 0% { opacity: 0.15; } 50% { opacity: 0.25; } 100% { opacity: 0.15; } }
+        .neon-edge { border: 2px solid #ff00ff; box-shadow: 0 0 15px #ff00ff, 0 0 30px #cc00cc; }
     </style>
 </head>
 <body>
-    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+    <nav class="bg-gray-900 p-4 flex justify-between items-center nav-fixed shadow-md">
         <div class="text-white text-3xl font-bold">DTS</div>
         <ul class="flex space-x-8">
             <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
@@ -30,42 +33,44 @@
         </ul>
     </nav>
 
-    <div class="min-h-screen flex items-center justify-center bg-pulse pt-20">
-        <div class="slide-up max-w-3xl p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-xl">
-            <h1 class="text-5xl font-bold text-white mb-6">About Us: Guardians of Small Business Survival</h1>
-            <div class="scroll-section h-[80vh]">
-                <p class="text-xl text-gray-200 mb-4">Founded in 2025, Decentralized Technology Services (DTS) stands as a lifeline for small businesses in an era of relentless technological disruption. We recognize that 80% of small businesses fail within five years due to inefficiencies, outdated systems, and data breaches—issues that threaten their very survival. Our mission is to reverse this trend, empowering these enterprises with AI integration to not only survive but thrive, delivering <span class="highlight">20% efficiency gains</span> and robust privacy protections.</p>
+    <div class="content-wrapper relative">
+        <div class="slide-in max-w-3xl p-6 neon-edge">
+            <h1 class="text-5xl font-bold text-white mb-6">About Us: Architects of Resilience</h1>
+            <div class="scroll-box">
+                <p class="text-xl text-gray-200 mb-4">Founded in 2025, Decentralized Technology Services (DTS) emerges as a beacon of hope for small businesses facing an unforgiving technological landscape. With 80% of small businesses succumbing within five years due to inefficiencies, outdated systems, and data breaches, we are committed to rewriting this narrative. Our mission is to empower these vital enterprises with AI integration, ensuring they not only survive but flourish with <span class="highlight">20% efficiency gains</span> and uncompromised privacy.</p>
 
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">The Critical Role of AI in Small Business Survival</h2>
-                <p class="text-xl text-gray-200 mb-4">Small businesses are the backbone of the global economy, contributing 44% of U.S. economic activity and employing 61.7 million people as of 2025. Yet, they face a digital divide—only 30% adopt advanced technologies like AI, leaving them vulnerable to competitors who do. AI integration is no longer optional; it’s a survival imperative. It automates repetitive tasks, enhances decision-making with real-time data, and secures customer trust—key factors in withstanding market volatility and economic downturns.</p>
-                <p class="text-xl text-gray-200 mb-4">Without AI, small businesses lose an average of $50,000 annually to manual errors and inefficiencies. DTS bridges this gap, offering tools that cut costs, streamline operations, and future-proof against technological obsolescence. Our data shows clients reduce downtime by 40% and increase revenue by 15% within the first year—proof that AI is their shield in a competitive landscape.</p>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">The Imperative of AI for Small Business Survival</h2>
+                <p class="text-xl text-gray-200 mb-4">Small businesses drive 44% of U.S. economic activity and employ 61.7 million people as of 2025, yet only 30% leverage AI, leaving them exposed to agile competitors. AI is the lifeline they need—automating tedious tasks, providing real-time insights, and fortifying data security against breaches that cost $200,000 on average. Without it, annual losses from inefficiencies hit $50,000 per business. DTS steps in with solutions that slash downtime by 40% and boost revenue by 15% within a year, proving AI is their survival key.</p>
+                <p class="text-xl text-gray-200 mb-4">In a world of rising costs and labor shortages, AI integration is the difference between closure and growth. Our tools future-proof operations, ensuring small businesses remain competitive as technology evolves at breakneck speed.</p>
 
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">How DTS Ensures Your Success</h2>
-                <p class="text-xl text-gray-200 mb-4">At DTS, we don’t just provide technology—we deliver survival strategies. Our team of 15 experts, including AI specialists and cybersecurity veterans, crafts tailored solutions for businesses with 1-100 employees. We integrate cutting-edge APIs to automate payroll, customer service, and supply chain management, saving up to $75,000 yearly per client. Our privacy-first approach, using AES-256 encryption, protects against 99.9% of cyber threats, a critical advantage as data breaches cost small businesses $200,000 on average.</p>
-                <p class="text-xl text-gray-200 mb-4">We offer 24/7 support, onboarding within 48 hours, and a scalable platform that grows with your business. Our pilot program with 50 clients in 2025 resulted in a 25% profit increase, demonstrating our commitment to your longevity. With DTS, you’re not just surviving—you’re leading.</p>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">How DTS Secures Your Future</h2>
+                <p class="text-xl text-gray-200 mb-4">DTS doesn’t just offer tech—we provide a blueprint for resilience. Our 15-expert team, comprising AI pioneers and cybersecurity experts, designs bespoke solutions for businesses with 1-100 employees. We automate critical functions—payroll, customer support, supply chains—saving up to $75,000 annually. With AES-256 encryption, we shield against 99.9% of cyber threats, a vital defense in an era where breaches devastate small firms.</p>
+                <p class="text-xl text-gray-200 mb-4">Our 24/7 support and 48-hour onboarding ensure you’re never alone. The 2025 pilot with 50 clients yielded a 25% profit surge, underscoring our dedication. DTS isn’t just a service—it’s your partner in enduring success.</p>
 
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Our API Arsenal</h2>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Our API Powerhouse</h2>
                 <h3 class="text-2xl font-semibold text-gray-200 mt-4">Grok 3 by xAI</h3>
-                <p class="text-lg text-gray-300 mb-4">Grok 3, xAI’s 2025 marvel, delivers 95% accuracy in natural language tasks with a 200ms latency. It powers chatbots, predictive analytics, and inventory forecasting, processing 500 requests per minute. DTS uses Grok 3 to reduce customer response times by 50%, a lifeline for businesses facing high demand.</p>
+                <p class="text-lg text-gray-300 mb-4">Grok 3, xAI’s 2025 breakthrough, boasts 95% accuracy in natural language processing with a 200ms latency. It handles 500 requests per minute, powering chatbots and forecasts. DTS harnesses it to halve response times, a game-changer for high-demand operations.</p>
                 <h3 class="text-2xl font-semibold text-gray-200 mt-4">OpenAI o3</h3>
-                <p class="text-lg text-gray-300 mb-4">OpenAI o3, launched in 2025, offers multimodal prowess with 98% precision across text, images, and data. Supporting 150+ languages, it handles 1,000 requests per second, ideal for multilingual e-commerce and marketing. DTS employs o3 to boost sales conversions by 20%, ensuring market relevance.</p>
+                <p class="text-lg text-gray-300 mb-4">OpenAI o3, 2025’s multimodal giant, achieves 98% precision across text, images, and data, supporting 150+ languages at 1,000 requests per second. DTS uses it to lift sales conversions by 20%, keeping businesses ahead.</p>
                 <h3 class="text-2xl font-semibold text-gray-200 mt-4">Anthropic Claude 4</h3>
-                <p class="text-lg text-gray-300 mb-4">Claude 4, Anthropic’s 2025 leader, achieves 99% ethical compliance with a 150ms response time. It manages 500 concurrent tasks, optimizing workflows by 30%. DTS leverages Claude 4 for compliance and audit readiness, protecting against regulatory fines that average $100,000 for small firms.</p>
+                <p class="text-lg text-gray-300 mb-4">Claude 4, Anthropic’s 2025 leader, offers 99% ethical compliance with a 150ms response time, managing 500 tasks simultaneously for a 30% workflow boost. DTS applies it for compliance, shielding against $100,000 fines.</p>
 
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Why Small Businesses Need DTS Now</h2>
-                <p class="text-xl text-gray-200 mb-4">The pandemic exposed the fragility of small businesses—20% closed permanently in 2020-2021. Rising costs, labor shortages, and cyber threats amplify this risk in 2025. AI integration via DTS mitigates these challenges, offering a 40% reduction in operational costs and a 60% faster market response. Our clients report a 35% increase in customer retention, a metric that separates survivors from failures.</p>
-                <p class="text-xl text-gray-200 mb-4">We’re projecting to support 2,000 businesses by 2028, with a $10M revenue goal, driven by our focus on survival. Our free consultation reduces setup costs by $5,000, and our scalable plans adapt to revenues from $50K to $5M. With DTS, you’re not just keeping afloat—you’re building an empire.</p>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">The Urgency of DTS in 2025</h2>
+                <p class="text-xl text-gray-200 mb-4">The pandemic’s toll—20% closures in 2020-2021—signals ongoing risks from costs and cyber threats. DTS counters with a 40% cost reduction and 60% faster responses. Our 35% client retention increase proves we turn survivors into leaders.</p>
+                <p class="text-xl text-gray-200 mb-4">Targeting 2,000 businesses by 2028 with a $10M goal, DTS offers $5,000 setup savings and plans for $50K-$5M revenues. Your empire starts here.</p>
 
-                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Our Commitment to Wealth Creation</h2>
-                <p class="text-xl text-gray-200 mb-4">DTS is your partner in wealth generation. We provide training programs that upskill your team in 30 days, increasing productivity by 25%. Our analytics dashboard, updated hourly, offers insights that drive a 15% profit margin growth. With a 98% client satisfaction rate, we’re your key to financial stability and growth in a volatile world.</p>
-                <p class="text-xl text-gray-200 mb-4">Join the DTS network—our roadmap includes AI-driven forecasting by 2026 and blockchain integration by 2029, ensuring you stay ahead. Survival is the first step; wealth is our destination.</p>
+                <h2 class="text-3xl font-bold text-white mt-6 mb-4">Building Wealth with DTS</h2>
+                <p class="text-xl text-gray-200 mb-4">DTS fuels wealth with 30-day training, boosting productivity by 25%. Our hourly-updated dashboard drives 15% profit growth, backed by 98% satisfaction. Forecast by 2026 and blockchain by 2029 keep you ahead.</p>
+                <p class="text-xl text-gray-200 mb-4">Join us—survival today, riches tomorrow.</p>
             </div>
         </div>
+        <!-- Cybernetic Wireframe Effect -->
+        <div class="wireframe"></div>
     </div>
 
     <script>
         window.addEventListener('load', () => {
-            document.querySelectorAll('.slide-up').forEach(el => el.classList.add('slide-up'));
+            document.querySelectorAll('.slide-in').forEach(el => el.classList.add('slide-in'));
         });
     </script>
 </body>
