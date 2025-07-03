@@ -13,23 +13,23 @@
         .input-glow:focus { box-shadow: 0 0 15px #00ccff; transition: box-shadow 0.3s; }
         .form-card { background: rgba(15, 26, 42, 0.9); border: 1px solid #00ccff; }
         @media (max-width: 640px) {
-            .nav-fixed { padding: 1rem; }
+            .nav-fixed { padding: 0.5rem; }
             .nav-fixed .menu { display: none; }
-            .nav-fixed .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
-            .nav-fixed .menu.active { display: flex; flex-direction: column; position: absolute; top: 60px; right: 1rem; background: rgba(15, 26, 42, 0.95); padding: 1rem; border-radius: 5px; }
+            .nav-fixed .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+            .nav-fixed .menu.active { display: flex; flex-direction: column; position: absolute; top: 50px; right: 0.5rem; background: rgba(15, 26, 42, 0.95); padding: 1rem; border-radius: 5px; }
             .nav-fixed ul { flex-direction: row; }
             .max-w-md { max-width: 100%; width: 95%; }
-            h1 { font-size: 2rem; }
-            p { font-size: 1.2rem; }
-            input, button { font-size: 1rem; padding: 0.75rem; }
+            h1 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+            input, button { font-size: 0.9rem; padding: 0.5rem; }
         }
     </style>
 </head>
 <body>
-    <nav class="nav-fixed p-4 flex justify-between items-center shadow-md bg-gray-900">
-        <div class="text-white text-3xl font-bold">DTS</div>
-        <div class="menu-toggle text-white md:hidden">☰</div>
-        <ul class="flex space-x-8 menu">
+    <nav class="nav-fixed bg-gray-900 flex justify-between items-center shadow-md">
+        <div class="text-white text-2xl font-bold pl-2">DTS</div>
+        <div class="menu-toggle text-white md:hidden pr-2">☰</div>
+        <ul class="flex space-x-4 menu">
             <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
             <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
             <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
@@ -37,18 +37,18 @@
         </ul>
     </nav>
 
-    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-20">
-        <div class="text-center bounce-in max-w-md p-6 form-card rounded-lg shadow-xl">
-            <h1 class="text-4xl font-bold text-white mb-6">Get Started</h1>
-            <p class="text-lg text-gray-200 mb-6">Unlock your business potential—fill out the form.</p>
-            <form class="space-y-4">
-                <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <input type="text" placeholder="Business Name" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <input type="text" placeholder="Annual Revenue (e.g., $100K)" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <input type="text" placeholder="Industry (e.g., Retail, Tech)" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <input type="number" placeholder="Number of Employees" class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
-                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Submit Now</button>
+    <div class="min-h-screen flex items-center justify-center bg-[url('https://via.placeholder.com/1920x1080?text=Tech+Background')] bg-cover bg-center pt-12">
+        <div class="text-center bounce-in max-w-md p-4 form-card rounded-lg shadow-xl">
+            <h1 class="text-3xl font-bold text-white mb-4">Get Started</h1>
+            <p class="text-lg text-gray-200 mb-4">Unlock your business potential—fill out the form.</p>
+            <form class="space-y-3">
+                <input type="text" placeholder="Your Name" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="email" placeholder="Your Email" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Business Name" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Annual Revenue (e.g., $100K)" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="text" placeholder="Industry (e.g., Retail, Tech)" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <input type="number" placeholder="Number of Employees" class="w-full p-2 bg-gray-700 text-white rounded-lg focus:outline-none input-glow" required>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Submit Now</button>
             </form>
         </div>
     </div>
