@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTS - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+        body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #1a2f4a, #0f1a2a); color: #ffffff; }
+        .slide-up { animation: slideUp 1.5s ease-out; }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .bg-pulse { animation: bgPulse 4s infinite; }
+        @keyframes bgPulse { 0% { background-color: #1a2f4a; } 50% { background-color: #0f1a2a; } 100% { background-color: #1a2f4a; } }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full z-50 shadow-md">
+        <div class="text-white text-3xl font-bold">DTS</div>
+        <ul class="flex space-x-8">
+            <li><a href="index.html" class="text-white hover:text-blue-300 transition duration-300">Home</a></li>
+            <li><a href="about.html" class="text-white hover:text-blue-300 transition duration-300">About</a></li>
+            <li><a href="services.html" class="text-white hover:text-blue-300 transition duration-300">Services</a></li>
+            <li><a href="get-started.html" class="text-white hover:text-blue-300 transition duration-300">Get Started</a></li>
+            <li><a href="contact.html" class="text-white hover:text-blue-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center bg-pulse pt-20">
+        <div class="text-center slide-up max-w-2xl p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg">
+            <h1 class="text-5xl font-bold text-white mb-6">About Us</h1>
+            <p class="text-xl text-gray-200 mb-4">DTS leads the charge in AI innovation, integrating top-tier APIs—Grok 3, OpenAI o3, Claude 4—with robust privacy through advanced encryption, boosting efficiency by 20% for small businesses.</p>
+            <p class="text-xl text-gray-200">Founded by forward-thinkers to empower your growth.</p>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.slide-up').forEach(el => el.classList.add('slide-up'));
+        });
+    </script>
+</body>
+</html>
